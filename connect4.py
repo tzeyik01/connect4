@@ -21,6 +21,8 @@ AI_PIECE = 2
 
 WINDOW_LENGTH = 4
 
+MINIMAX_DEPTH = 5
+
 def create_board():
 	board = np.zeros((ROW_COUNT,COL_COUNT))
 	return board
@@ -271,7 +273,7 @@ while not game_over:
 
 		#col = random.randint(0, COL_COUNT-1)
 		#col = pick_best_move(board, AI_PIECE)
-		col, minimax_score = minimax(board, 5, -math.inf, math.inf, True)
+		col, minimax_score = minimax(board, MINIMAX_DEPTH, -math.inf, math.inf, True)
 
 		if is_valid_location(board, col):
 			#pygame.time.wait(500)
